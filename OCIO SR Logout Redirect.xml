@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<unload unload_date="2018-07-31 21:44:31">
+<sys_remote_update_set action="INSERT_OR_UPDATE">
+<application display_value="Global">global</application>
+<application_name>Global</application_name>
+<application_scope>global</application_scope>
+<application_version/>
+<collisions/>
+<commit_date/>
+<deleted/>
+<description>OCIO SR Logout Redirect -  JIRA - SB-255</description>
+<inserted/>
+<name>OCIO SR Logout Redirect</name>
+<origin_sys_id/>
+<parent display_value=""/>
+<release_date/>
+<remote_base_update_set display_value=""/>
+<remote_parent_id/>
+<remote_sys_id>1ea95f07db2b1f00fe199236db9619ee</remote_sys_id>
+<state>loaded</state>
+<summary/>
+<sys_class_name>sys_remote_update_set</sys_class_name>
+<sys_created_by>JAJOSE</sys_created_by>
+<sys_created_on>2018-07-31 21:44:30</sys_created_on>
+<sys_id>3c4bdb47db2b1f00fe199236db96199c</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>JAJOSE</sys_updated_by>
+<sys_updated_on>2018-07-31 21:44:30</sys_updated_on>
+<update_set display_value=""/>
+<update_source display_value=""/>
+<updated/>
+</sys_remote_update_set>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_installation_exit_8bd80b7c0a0a0aa900d8a8aa61bb154a</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_installation_exit"&gt;&lt;sys_installation_exit action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;description&gt;User logout with redirection.  This is the default which takes the user to the welcome page.  Override this for a custom logout.&lt;/description&gt;&lt;name&gt;LogoutRedirect&lt;/name&gt;&lt;overrides&gt;Logout&lt;/overrides&gt;&lt;script&gt;&lt;![CDATA[gs.include("PrototypeServer");
+
+var LogoutRedirect = Class.create();
+LogoutRedirect.prototype = {
+
+        process : function() {
+          var gotoURL = "https://logon.gov.bc.ca/clp-cgi/logoff.cgi";
+
+          response.sendRedirect("logout_redirect.do?sysparm_url=" + gotoURL);
+
+          return true;
+        }
+
+}]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_installation_exit&lt;/sys_class_name&gt;&lt;sys_created_by&gt;glide.maint&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2007-05-14 18:27:10&lt;/sys_created_on&gt;&lt;sys_id&gt;8bd80b7c0a0a0aa900d8a8aa61bb154a&lt;/sys_id&gt;&lt;sys_mod_count&gt;15&lt;/sys_mod_count&gt;&lt;sys_name&gt;LogoutRedirect&lt;/sys_name&gt;&lt;sys_package display_value="System (glidesoft)" source="glidesoft"&gt;29e82c33db310300ae0690f9db9619af&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_installation_exit_8bd80b7c0a0a0aa900d8a8aa61bb154a&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;JAJOSE&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2018-07-31 21:43:18&lt;/sys_updated_on&gt;&lt;/sys_installation_exit&gt;&lt;/record_update&gt;</payload>
+<payload_hash>-321819133</payload_hash>
+<remote_update_set display_value="OCIO SR Logout Redirect">3c4bdb47db2b1f00fe199236db96199c</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>JAJOSE</sys_created_by>
+<sys_created_on>2018-07-31 21:44:30</sys_created_on>
+<sys_id>304bdb47db2b1f00fe199236db96199e</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>164f24b994e0000001</sys_recorded_at>
+<sys_updated_by>JAJOSE</sys_updated_by>
+<sys_updated_on>2018-07-31 21:44:30</sys_updated_on>
+<table/>
+<target_name>LogoutRedirect</target_name>
+<type>Installation Exit</type>
+<update_domain>global</update_domain>
+<update_guid>0bfadb47362b1f0052a0a302038034ed</update_guid>
+<update_guid_history>0bfadb47362b1f0052a0a302038034ed:-321819133,92421a364de31300f20de1789e44e100:1734588142,50e38bf673e31300707736a986dbbc73:-321819133,ae7303f66de3130031150dbe8db763dc:472988229,11f24ffe926fdb0000ffb1acfdb4294b:472988229,92421a364de31300f20de1789e44e100:1734588142,92421a364de31300f20de1789e44e100:1734588142,d9f11676a3e31300c5be92f1937de09d:-1645986224,f3e215ba4323130027e6f4cfa5d6994c:-321819133,c15291bae3231300f5e5ffbc221ccdf6:271556624,815291bae02313004554b9c997d326f5:472988229,e09287fe116fdb00694ac5d25c6d27df:472988229</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_installation_exit_8b98e4460a0a0aa90019ce4bae1e7d10</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_installation_exit"&gt;&lt;sys_installation_exit action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;description&gt;User logout.  This is the default which takes the user to the welcome page.  Override this for a custom logout.&lt;/description&gt;&lt;name&gt;Logout&lt;/name&gt;&lt;overrides/&gt;&lt;script&gt;&lt;![CDATA[gs.include("PrototypeServer");
+
+var Logout = Class.create();
+Logout.prototype = {
+
+        process : function() {
+        var s = request.getParameter('sysparm_goto_url');
+    	if (s &amp;&amp; GlideSecurityUtils.isURLWhiteListed(s))
+          response.sendRedirect(s);
+        else
+          response.sendRedirect("logout_success.do");
+
+          return true;
+        }
+
+}
+]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_installation_exit&lt;/sys_class_name&gt;&lt;sys_created_by&gt;glide.maint&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2007-05-14 17:18:12&lt;/sys_created_on&gt;&lt;sys_id&gt;8b98e4460a0a0aa90019ce4bae1e7d10&lt;/sys_id&gt;&lt;sys_mod_count&gt;18&lt;/sys_mod_count&gt;&lt;sys_name&gt;Logout&lt;/sys_name&gt;&lt;sys_package display_value="System (glidesoft)" source="glidesoft"&gt;07613e32791203006517636e4f5349ce&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_installation_exit_8b98e4460a0a0aa90019ce4bae1e7d10&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;James.Jose&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2018-07-31 00:52:35&lt;/sys_updated_on&gt;&lt;/sys_installation_exit&gt;&lt;/record_update&gt;</payload>
+<payload_hash>183441192</payload_hash>
+<remote_update_set display_value="OCIO SR Logout Redirect">3c4bdb47db2b1f00fe199236db96199c</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>JAJOSE</sys_created_by>
+<sys_created_on>2018-07-31 21:44:30</sys_created_on>
+<sys_id>7c4bdb47db2b1f00fe199236db96199d</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>164f2464d780000000</sys_recorded_at>
+<sys_updated_by>JAJOSE</sys_updated_by>
+<sys_updated_on>2018-07-31 21:44:30</sys_updated_on>
+<table/>
+<target_name>Logout</target_name>
+<type>Installation Exit</type>
+<update_domain>global</update_domain>
+<update_guid>1ebc3afe9227130009388802e1a5e692</update_guid>
+<update_guid_history>1ebc3afe9227130009388802e1a5e692:183441192,d56c3afe7f271300ec7b4af0697697f4:-492442723,9414aab2b62713006af83da439f8cfdd:183441192,1532127653e3130021cc59c6f9131806:-492442723,dda1d2762ee313006c8314211e0ee809:183441192,c34215ba932313003f106bbb85afc546:-492442723,0f4215ba77231300a97a4647f1b5b344:183441192,21b6c3b6f4afdb00c2ab3fdda1e1659f:-492442723,61664f76f8afdb0083fd6f4c08e4c81d:183441192,1c04c7f607e31300d90317b4aa9b65d9:-492442723,ea7303f6cbe31300b4eccebc00ca9fd9:183441192,a49287fe1f6fdb0008b2b843f967f378:183441192</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_installation_exit_4b4bbf531b121100227e5581be071380</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_installation_exit"&gt;&lt;sys_installation_exit action="INSERT_OR_UPDATE"&gt;&lt;active&gt;false&lt;/active&gt;&lt;description&gt;Allows each domain to have their own logout script. &lt;/description&gt;&lt;name&gt;MultiSSOLogout&lt;/name&gt;&lt;overrides&gt;Logout&lt;/overrides&gt;&lt;script&gt;&lt;![CDATA[gs.include("PrototypeServer");
+gs.include("SSO_Helper");
+gs.include("SAML2_update1");
+
+var MultiSSOLogout = Class.create();
+MultiSSOLogout.prototype = {
+    
+    initialize: function() {
+        this.ssoHelper = new SSO_Helper(null, true);
+        var loginMethod = request.getSession().getAttribute("glide.authenticate.multisso.login.method");
+        this.loggedInNormal = (loginMethod == null || "db" == loginMethod);
+        this.propertiesGR = this.ssoHelper.getProperties();
+        
+        if (! this.loggedInNormal) {
+            this.ssoHelper.debug("Logging out external auth : " + this.propertiesGR.sys_class_name);
+        
+            if (this.propertiesGR.sys_class_name == 'saml2_update1_properties')
+                this.SAML2 = new SAML2_update1(this.ssoHelper);
+        }
+    },
+    
+    process : function() {
+        if ( "true" != gs.getProperty("glide.authenticate.multisso.enabled") 
+            || this.loggedInNormal
+            || this.propertiesGR.sys_class_name == 'digest_properties' ) {
+            this.ssoHelper.debug("Logging out normal");
+            return this.processNormalLogout();
+        }
+        
+        if (this.propertiesGR.sys_class_name == 'saml2_update1_properties') {
+            
+            var binding = this.propertiesGR.idp_logout_binding;
+            if (binding &amp;&amp; binding.equals("urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST")) {
+                this.ssoHelper.debug("Logging out saml using HTTP POST");
+                var output = this.SAML2.generateLogoutRequestForm(request);
+                response.setContentType("text/html");
+                response.getWriter().write(output);
+            } else {
+                this.ssoHelper.debug("Logging out saml using HTTP Redirect");
+                var req = this.SAML2.generateLogoutRequestURL(request);
+                if (GlideStringUtil.nil(req)) {
+                    gs.logWarning("MultiSSOLogout: Logout request URL was null. Redirecting to a static page.");
+                    response.sendRedirect("logout_success.do");
+                } else
+                    response.sendRedirect("auth_redirect.do?sysparm_url=" + escape(req));
+            }
+        }
+
+        return true;
+    },
+    
+    getLogoutRequest : function () {
+        var sessionIndex = request.getSession().getAttribute("glide.multiSSO.session_index");
+        var nameId = request.getSession().getAttribute("glide.multiSSO.session_id");
+        var elem = this.SAML2.createLogoutRequest();
+        
+        this.SAML2.createIssuer(elem);
+        this.SAML2.createNameID(elem, nameId);
+        this.SAML2.createSessionIndex(elem, sessionIndex);
+        
+        return this.SAML2.getEncodedSAMLRequest(elem);
+    },
+    
+    processNormalLogout : function() {
+        var s = request.getParameter('sysparm_goto_url');
+        if (s &amp;&amp; GlideSecurityUtils.isURLWhiteListed(s)) {
+            this.ssoHelper.debug("processNormalLogout redirecting to : " + s);
+            response.sendRedirect(s);
+        } else
+            response.sendRedirect("logout_success.do");
+        
+        return true;
+    }
+    
+};
+]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_installation_exit&lt;/sys_class_name&gt;&lt;sys_created_by&gt;maint&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2014-01-21 21:55:31&lt;/sys_created_on&gt;&lt;sys_id&gt;4b4bbf531b121100227e5581be071380&lt;/sys_id&gt;&lt;sys_mod_count&gt;20&lt;/sys_mod_count&gt;&lt;sys_name&gt;MultiSSOLogout&lt;/sys_name&gt;&lt;sys_package display_value="Integration - Multiple Provider Single Sign-On (do not activate...use 'Integration - Multiple Provid" source="com.snc.integration.sso.multi"&gt;6614425ddb61d700c4e19c78db9619ca&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_installation_exit_4b4bbf531b121100227e5581be071380&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;JAJOSE&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2018-07-31 21:42:59&lt;/sys_updated_on&gt;&lt;/sys_installation_exit&gt;&lt;/record_update&gt;</payload>
+<payload_hash>-292162413</payload_hash>
+<remote_update_set display_value="OCIO SR Logout Redirect">3c4bdb47db2b1f00fe199236db96199c</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>JAJOSE</sys_created_by>
+<sys_created_on>2018-07-31 21:44:30</sys_created_on>
+<sys_id>b04bdb47db2b1f00fe199236db96199d</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>164f24b4fd30000001</sys_recorded_at>
+<sys_updated_by>JAJOSE</sys_updated_by>
+<sys_updated_on>2018-07-31 21:44:30</sys_updated_on>
+<table/>
+<target_name>MultiSSOLogout</target_name>
+<type>Installation Exit</type>
+<update_domain>global</update_domain>
+<update_guid>a2ea5fc3c12b1f00678562b0ed4f6430</update_guid>
+<update_guid_history>a2ea5fc3c12b1f00678562b0ed4f6430:-292162413,8ca4df8712ebdb008b39ce1bcac245ba:-1435272034,b934d307fbebdb005a8f9ea5af0faac1:-292162413,d2c78bcfd5abdb0035c3fda3fa8d20d0:-1435272034,65a8a68fc46bdb0081e92ccd5fe8f29a:-292162413,8a78e28f686bdb00323b0ef6fa5dfcd9:-1435272034,9f376a4fa16bdb001c286247ead1edd0:-292162413,569dd583a211d300bdcd65045d558229:-1435272034,569dd583a311d30070f00c57172fda28:-292162413</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_installation_exit_809e3603dba313003d1dd001cf96197f</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_installation_exit"&gt;&lt;sys_installation_exit action="INSERT_OR_UPDATE"&gt;&lt;active&gt;false&lt;/active&gt;&lt;description/&gt;&lt;name&gt;MultiSSOLogin&lt;/name&gt;&lt;overrides&gt;Login&lt;/overrides&gt;&lt;script&gt;&lt;![CDATA[gs.include("PrototypeServer");
+gs.include("SSO_Helper");
+
+var MultiSSOLogin = Class.create();
+MultiSSOLogin.prototype = {
+	initialize : function() {
+		
+	},
+	
+	process : function() {
+		// the request is passed in as a global
+		var userName = request.getParameter("user_name");
+		var userPassword = request.getParameter("user_password");
+		var user = GlideUser;
+		var authed = user.authenticate(userName, userPassword);
+		gs.log("Logging using normal DB");
+		if (authed) {
+			// it logined with normal DB creds in a multisso environment.
+			request.getSession().setAttribute("glide.authenticate.multisso.login.method", "db");
+			SSO_Helper.clearCookie(SNC.SSOUtils.SSOID());
+			return user.getUser(userName);
+		}
+		
+		this.loginFailed();
+		return "login.failed";
+	},
+	
+	loginFailed : function() {
+		var sysMessage = GlideSysMessage;
+		var message = sysMessage.format("login_invalid");
+		var gs = GlideSession.get();
+		gs.addErrorMessage(message);
+	}
+}
+]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_installation_exit&lt;/sys_class_name&gt;&lt;sys_created_by&gt;NKUMAR&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2018-07-31 19:39:59&lt;/sys_created_on&gt;&lt;sys_id&gt;809e3603dba313003d1dd001cf96197f&lt;/sys_id&gt;&lt;sys_mod_count&gt;1&lt;/sys_mod_count&gt;&lt;sys_name&gt;MultiSSOLogin&lt;/sys_name&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_installation_exit_809e3603dba313003d1dd001cf96197f&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;NKUMAR&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2018-07-31 21:14:26&lt;/sys_updated_on&gt;&lt;/sys_installation_exit&gt;&lt;/record_update&gt;</payload>
+<payload_hash>1343691079</payload_hash>
+<remote_update_set display_value="OCIO SR Logout Redirect">3c4bdb47db2b1f00fe199236db96199c</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>JAJOSE</sys_created_by>
+<sys_created_on>2018-07-31 21:44:30</sys_created_on>
+<sys_id>b84bdb47db2b1f00fe199236db96199d</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>164f2464d780000000</sys_recorded_at>
+<sys_updated_by>JAJOSE</sys_updated_by>
+<sys_updated_on>2018-07-31 21:44:30</sys_updated_on>
+<table/>
+<target_name>MultiSSOLogin</target_name>
+<type>Installation Exit</type>
+<update_domain>global</update_domain>
+<update_guid>2464978714a31300a95bcaa6990e5563</update_guid>
+<update_guid_history>2464978714a31300a95bcaa6990e5563:1343691079,f4ce360359a313005641f762ca7fc682:2054602514</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+</unload>
