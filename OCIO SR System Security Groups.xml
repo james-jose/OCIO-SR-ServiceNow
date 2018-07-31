@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<unload unload_date="2018-07-13 03:33:48">
+<sys_remote_update_set action="INSERT_OR_UPDATE">
+<application display_value="Global">global</application>
+<application_name>Global</application_name>
+<application_scope>global</application_scope>
+<application_version/>
+<collisions/>
+<commit_date/>
+<deleted/>
+<description>OCIO SR Groups  - SB-267, SB- 269</description>
+<inserted/>
+<name>OCIO SR Groups</name>
+<origin_sys_id/>
+<parent display_value=""/>
+<release_date/>
+<remote_base_update_set display_value=""/>
+<remote_parent_id/>
+<remote_sys_id>17c9f5cddbd313003d1dd001cf9619b2</remote_sys_id>
+<state>loaded</state>
+<summary/>
+<sys_class_name>sys_remote_update_set</sys_class_name>
+<sys_created_by>James.Jose</sys_created_by>
+<sys_created_on>2018-07-13 03:33:47</sys_created_on>
+<sys_id>cc057e0ddb5713003d1dd001cf961902</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>James.Jose</sys_updated_by>
+<sys_updated_on>2018-07-13 03:33:47</sys_updated_on>
+<update_set display_value=""/>
+<update_source display_value=""/>
+<updated/>
+</sys_remote_update_set>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_user_group_380b7101db1713003d1dd001cf96194d</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_user_group"><sys_user_group action="INSERT_OR_UPDATE"><active>true</active><average_daily_fte/><cost_center/><default_assignee/><description>Group to manage who has access, via the self service portal, to place service requests for all services in the catalog</description><email/><exclude_manager>false</exclude_manager><hourly_rate>0</hourly_rate><include_members>false</include_members><manager/><name>Access Portal Full Catalog</name><parent/><points>0</points><roles/><source/><sys_created_by>James.Jose</sys_created_by><sys_created_on>2018-07-12 23:22:54</sys_created_on><sys_id>380b7101db1713003d1dd001cf96194d</sys_id><sys_mod_count>0</sys_mod_count><sys_updated_by>James.Jose</sys_updated_by><sys_updated_on>2018-07-12 23:22:54</sys_updated_on><type>74af88c6c611227d0066386e74dc853d</type></sys_user_group></record_update>]]></payload>
+<payload_hash>-1274521037</payload_hash>
+<remote_update_set display_value="OCIO SR Groups">cc057e0ddb5713003d1dd001cf961902</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>James.Jose</sys_created_by>
+<sys_created_on>2018-07-13 03:33:47</sys_created_on>
+<sys_id>0c057e0ddb5713003d1dd001cf961903</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>16490cead500000001</sys_recorded_at>
+<sys_updated_by>James.Jose</sys_updated_by>
+<sys_updated_on>2018-07-13 03:33:47</sys_updated_on>
+<table/>
+<target_name>Access Portal Full Catalog</target_name>
+<type>Group</type>
+<update_domain>global</update_domain>
+<update_guid>2ccbf5cdffd3130030e9007c58e45dbc</update_guid>
+<update_guid_history>2ccbf5cdffd3130030e9007c58e45dbc:-1274521037</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_user_group_1b21720ddb5713003d1dd001cf96194c</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_user_group"><sys_user_group action="INSERT_OR_UPDATE"><active>true</active><average_daily_fte/><cost_center/><default_assignee/><description>This assignment group is used by staff at IBM (ISM) who fulfill service requests to modify IDIR Accounts</description><email/><exclude_manager>false</exclude_manager><hourly_rate>0</hourly_rate><include_members>false</include_members><manager/><name>IBM Modify Account</name><parent/><points>0</points><roles/><source/><sys_created_by>James.Jose</sys_created_by><sys_created_on>2018-07-13 03:17:32</sys_created_on><sys_id>1b21720ddb5713003d1dd001cf96194c</sys_id><sys_mod_count>0</sys_mod_count><sys_updated_by>James.Jose</sys_updated_by><sys_updated_on>2018-07-13 03:17:32</sys_updated_on><type>1cb8ab9bff500200158bffffffffff62</type></sys_user_group></record_update>]]></payload>
+<payload_hash>1237699028</payload_hash>
+<remote_update_set display_value="OCIO SR Groups">cc057e0ddb5713003d1dd001cf961902</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>James.Jose</sys_created_by>
+<sys_created_on>2018-07-13 03:33:47</sys_created_on>
+<sys_id>48057e0ddb5713003d1dd001cf961903</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>16491a5a4680000001</sys_recorded_at>
+<sys_updated_by>James.Jose</sys_updated_by>
+<sys_updated_on>2018-07-13 03:33:47</sys_updated_on>
+<table/>
+<target_name>IBM Modify Account</target_name>
+<type>Group</type>
+<update_domain>global</update_domain>
+<update_guid>0c813ac9f4571300ec5063764022f8be</update_guid>
+<update_guid_history>0c813ac9f4571300ec5063764022f8be:1237699028</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_group_has_role_66513ac9db5713003d1dd001cf9619bb</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_group_has_role"><sys_group_has_role action="INSERT_OR_UPDATE"><granted_by/><group display_value="IBM Modify Account" name="IBM Modify Account">1b21720ddb5713003d1dd001cf96194c</group><inherits>true</inherits><role display_value="itil" name="itil">282bf1fac6112285017366cb5f867469</role><sys_created_by>James.Jose</sys_created_by><sys_created_on>2018-07-13 03:17:50</sys_created_on><sys_id>66513ac9db5713003d1dd001cf9619bb</sys_id><sys_mod_count>0</sys_mod_count><sys_updated_by>James.Jose</sys_updated_by><sys_updated_on>2018-07-13 03:17:50</sys_updated_on></sys_group_has_role></record_update>]]></payload>
+<payload_hash>-1241900174</payload_hash>
+<remote_update_set display_value="OCIO SR Groups">cc057e0ddb5713003d1dd001cf961902</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>James.Jose</sys_created_by>
+<sys_created_on>2018-07-13 03:33:47</sys_created_on>
+<sys_id>84057e0ddb5713003d1dd001cf961903</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>16491b199720000001</sys_recorded_at>
+<sys_updated_by>James.Jose</sys_updated_by>
+<sys_updated_on>2018-07-13 03:33:47</sys_updated_on>
+<table/>
+<target_name>IBM Modify Account.itil</target_name>
+<type>Group Role</type>
+<update_domain>global</update_domain>
+<update_guid>5374fa4dbe571300a8507b26afc17782</update_guid>
+<update_guid_history>5374fa4dbe571300a8507b26afc17782:-1241900174</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_group_has_role_11c0be89db1713003d1dd001cf9619ed</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_group_has_role"><sys_group_has_role action="INSERT_OR_UPDATE"><granted_by/><group display_value="Voice Order Management" name="Voice Order Management">7d603ac9db5713003d1dd001cf96199d</group><inherits>true</inherits><role display_value="itil" name="itil">282bf1fac6112285017366cb5f867469</role><sys_created_by>James.Jose</sys_created_by><sys_created_on>2018-07-13 03:15:18</sys_created_on><sys_id>11c0be89db1713003d1dd001cf9619ed</sys_id><sys_mod_count>0</sys_mod_count><sys_updated_by>James.Jose</sys_updated_by><sys_updated_on>2018-07-13 03:15:18</sys_updated_on></sys_group_has_role></record_update>]]></payload>
+<payload_hash>-1070403622</payload_hash>
+<remote_update_set display_value="OCIO SR Groups">cc057e0ddb5713003d1dd001cf961902</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>James.Jose</sys_created_by>
+<sys_created_on>2018-07-13 03:33:47</sys_created_on>
+<sys_id>c0057e0ddb5713003d1dd001cf961903</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>16491b0fb140000001</sys_recorded_at>
+<sys_updated_by>James.Jose</sys_updated_by>
+<sys_updated_on>2018-07-13 03:33:47</sys_updated_on>
+<table/>
+<target_name>Voice Order Management.itil</target_name>
+<type>Group Role</type>
+<update_domain>global</update_domain>
+<update_guid>d9547e0db357130063c3bafad3949100</update_guid>
+<update_guid_history>d9547e0db357130063c3bafad3949100:-1070403622</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_user_group_7d603ac9db5713003d1dd001cf96199d</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_user_group"><sys_user_group action="INSERT_OR_UPDATE"><active>true</active><average_daily_fte/><cost_center/><default_assignee/><description>This assignment group is used by staff who fulfill service requests for voice services.</description><email/><exclude_manager>false</exclude_manager><hourly_rate>0</hourly_rate><include_members>false</include_members><manager/><name>Voice Order Management</name><parent/><points>0</points><roles/><source/><sys_created_by>James.Jose</sys_created_by><sys_created_on>2018-07-13 03:14:51</sys_created_on><sys_id>7d603ac9db5713003d1dd001cf96199d</sys_id><sys_mod_count>0</sys_mod_count><sys_updated_by>James.Jose</sys_updated_by><sys_updated_on>2018-07-13 03:14:51</sys_updated_on><type>1cb8ab9bff500200158bffffffffff62</type></sys_user_group></record_update>]]></payload>
+<payload_hash>-631678891</payload_hash>
+<remote_update_set display_value="OCIO SR Groups">cc057e0ddb5713003d1dd001cf961902</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>James.Jose</sys_created_by>
+<sys_created_on>2018-07-13 03:33:47</sys_created_on>
+<sys_id>cc057e0ddb5713003d1dd001cf961903</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>16491a3014a0000001</sys_recorded_at>
+<sys_updated_by>James.Jose</sys_updated_by>
+<sys_updated_on>2018-07-13 03:33:47</sys_updated_on>
+<table/>
+<target_name>Voice Order Management</target_name>
+<type>Group</type>
+<update_domain>global</update_domain>
+<update_guid>f5d03ac9995713002da8e08195d70194</update_guid>
+<update_guid_history>f5d03ac9995713002da8e08195d70194:-631678891</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+</unload>
