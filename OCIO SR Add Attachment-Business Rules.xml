@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<unload unload_date="2018-07-30 19:43:52">
+<sys_remote_update_set action="INSERT_OR_UPDATE">
+<application display_value="Global">global</application>
+<application_name>Global</application_name>
+<application_scope>global</application_scope>
+<application_version/>
+<collisions/>
+<commit_date/>
+<deleted/>
+<description>OCIO SR Add Attachment  - Business rule to generate JSON file and attach to catalog task. JIRA SB-213 and SB-215</description>
+<inserted/>
+<name>OCIO SR Add Attachment-Business Rules</name>
+<origin_sys_id/>
+<parent display_value=""/>
+<release_date/>
+<remote_base_update_set display_value=""/>
+<remote_parent_id/>
+<remote_sys_id>48a2cd2fdb831300f72fe04a4896191a</remote_sys_id>
+<state>loaded</state>
+<summary/>
+<sys_class_name>sys_remote_update_set</sys_class_name>
+<sys_created_by>James.Jose</sys_created_by>
+<sys_created_on>2018-07-30 19:43:51</sys_created_on>
+<sys_id>bb06793adb231300f72fe04a4896198e</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>James.Jose</sys_updated_by>
+<sys_updated_on>2018-07-30 19:43:51</sys_updated_on>
+<update_set display_value=""/>
+<update_source display_value=""/>
+<updated/>
+</sys_remote_update_set>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_script_34064093db4713003d1dd001cf961985</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sys_script"&gt;&lt;sys_script action="INSERT_OR_UPDATE"&gt;&lt;abort_action&gt;false&lt;/abort_action&gt;&lt;access&gt;package_private&lt;/access&gt;&lt;action_delete&gt;false&lt;/action_delete&gt;&lt;action_insert&gt;true&lt;/action_insert&gt;&lt;action_query&gt;false&lt;/action_query&gt;&lt;action_update&gt;false&lt;/action_update&gt;&lt;active&gt;true&lt;/active&gt;&lt;add_message&gt;false&lt;/add_message&gt;&lt;advanced&gt;true&lt;/advanced&gt;&lt;change_fields&gt;false&lt;/change_fields&gt;&lt;client_callable&gt;false&lt;/client_callable&gt;&lt;collection&gt;sc_task&lt;/collection&gt;&lt;condition/&gt;&lt;description/&gt;&lt;execute_function&gt;false&lt;/execute_function&gt;&lt;filter_condition/&gt;&lt;is_rest&gt;false&lt;/is_rest&gt;&lt;message/&gt;&lt;name&gt;OCIO SR Add Attachment&lt;/name&gt;&lt;order&gt;900&lt;/order&gt;&lt;priority&gt;100&lt;/priority&gt;&lt;rest_method/&gt;&lt;rest_method_text/&gt;&lt;rest_service/&gt;&lt;rest_service_text/&gt;&lt;rest_variables/&gt;&lt;role_conditions/&gt;&lt;script&gt;&lt;![CDATA[/**
+ * Add attachment to the service catalog task for the specific service catalog items fulfillment
+ *
+ *
+ * Pre-requisites:
+ * 1. Service Catalog Item needs to configure a variable names as 'hidden_sc_item_name_for_attachment'  for this business rule - (see Switch staement)
+ *
+ * History
+ * JIRA   Date         Developer       Description
+ * -----  -----------  --------------  ------------------------
+ * SB-213  27-Jun-2018  Munhwan Gim      Initial implementation for Update Contact Information (GAL) catalog item fulfillment
+ * SB-59   25-July-2018 Munhwan Gim      Support for User Account Status Change Complete Fulfillment
+ *
+ * Copyright to BC Public Service, OCIO, Service Request
+ **/
+(function executeRule(current, previous /*null when async*/) {
+	
+	var request_itemRef = current.request_item.getRefRecord();
+	var cat_itemRef = request_itemRef.cat_item.getRefRecord();
+	
+	var sc_item_number = request_itemRef.getValue('number');
+	var userNameRequestedFor = getUserNameById(request_itemRef.variables.u_requested_for);
+	
+	// Need single-quote for make SWITCH statment work. Otherwise use toString() with double-quote on SWITCH - CASE
+	var sc_item_name = cat_itemRef.name+'';
+	
+	var scTaskId = current.getValue("sys_id");
+	var scItemVars = request_itemRef.variables;
+	var dataToAttach = '';
+	
+	var HIDDEN_SC_ITEM_NAME = scItemVars.hidden_sc_item_name_for_attachment+'';
+	var fileName = '';
+	
+	// Cases must be matched with sc_cat_item name to be handled specifically. This block might be refactored as more service is implemented.
+	switch (HIDDEN_SC_ITEM_NAME) {
+		case 'Update Contact Information':
+		fileName = 'GALData_'+sc_item_number+'.json';
+		
+		dataToAttach = getGALData(userNameRequestedFor, current.short_description, current.description, scItemVars);
+		addAttachmentToServiceCatalogTask(current, dataToAttach, scTaskId, fileName, 'application/json');
+		break;
+		case 'Change Account':
+		fileName = 'ChangeAccountData_'+sc_item_number+'.json';
+		var iWantToSelected = request_itemRef.variables.u_i_want_to;
+		
+		dataToAttach = getChangeAccountData(iWantToSelected, userNameRequestedFor, scItemVars);
+		addAttachmentToServiceCatalogTask(current, dataToAttach, scTaskId, fileName, 'application/json');
+		break;
+		default:
+		gs.info('&gt;&gt;&gt;DEBUG:: OCIO SC TASK Add Attachment: Do not need to add attachment when a new sc task is inserted. The Service Catalog Item = (' + HIDDEN_SC_ITEM_NAME + ')');
+		break;
+	}
+	
+	/**
+ 	* Add attachment for the table, sc_task, with the attachment data
+ 	* @param: current: service catalog task (object)
+ 	* @param: attachmentData: attachment data
+ 	* @param: scTaskId: attachment table_sys_id value to be assigned
+ 	* @param: fileName: attachment file name
+ 	* @param: contentType: attachment content type, which should be matached with the content of 'attachmentData'
+ 	* @return: none
+ 	*/
+	function addAttachmentToServiceCatalogTask(current, attachmentData, scTaskId, fileName, contentType) {
+		// Set Attachment Inputs
+		var gsAttach = new GlideSysAttachment();
+		var idAttached = gsAttach.write(current, fileName, contentType, attachmentData);
+		
+		// Set table_sys_id on the attachment
+		var att = new GlideRecord('sys_attachment');
+		att.addQuery('sys_id', idAttached);
+		att.query();
+		if (att.next()) {
+			att.table_sys_id = scTaskId;
+			att.update();
+		}
+		
+	}
+	
+	/**
+ 	* Generate JSON for GAL Update Request mapped with JSON Schema from the IBM
+ 	* @param: userID: sys_id of the user table
+ 	* @return: user name
+ 	*/
+	function getUserNameById( userID ) {
+		var grUser = new GlideRecord('sys_user');
+		grUser.addQuery('sys_id', userID);
+		grUser.query();
+		
+		var userName = '';
+		
+		if (grUser.next()) {
+			userName = grUser.user_name;
+		} else {
+			gs.warn('&gt;&gt;&gt; DEBUG: No user name found for a ' + userID);
+		}
+		
+		return userName;
+	}
+	
+	/**
+ 	* Generate JSON for GAL Update Request mapped with JSON Schema from the IBM
+ 	* @param: reqFor: IDIR user name (string)
+ 	* @param: shortDesc: service catalog Item short description (string)
+ 	* @param: desc: service catalog Item description (string)
+ 	* @param: scItem: service catalog Item variables object
+ 	* @return: json string
+ 	*/
+	function getGALData(reqFor, shortDesc, desc, scItem) {
+		return '{'
+			+		'"GALUpdateRequest": {'
+				+			'"IDIR": "' +  reqFor + '",'
+				+			'"GALOrganizationInfo": {'
+					+				'"adminNote": "' + desc + '",'
+					+				'"assistant": "' + scItem.u_assistant + '",'
+					+				'"BCGovInfo": "' + "" + '",'
+					+				'"company": "' +  scItem.u_organization + '",'
+					+				'"department": "' + scItem.u_department + '",'
+					+				'"description": "' + shortDesc + '",'
+					+				'"jobTitle": "' + scItem.u_title + '",'
+					+				'"manager": "' +  "" + '",'
+					+				'"office": "' + scItem.u_office + '"'
+					+			'},'
+					+			'"GALContactInfo": {'
+						+				'"city": "' + scItem.u_city + '",'
+						+				'"country": "Canada",'
+						+				'"fax": "' + scItem.u_fax + '",'
+						+				'"mobile": "' + scItem.u_mobile_phone + '",'
+						+				'"pager": "' + scItem.u_pager + '",'
+						+				'"postalCode": "' + scItem.u_postal_code + '",'
+						+				'"province": "BC",'
+						+				'"street": "' + scItem.u_address + '",'
+						+				'"telephoneNotes": "' + "" + '",'
+						+				'"telephoneNumber": "' + scItem.u_business_phone + '"'
+						+			'}'
+						+		'}'
+						+'}';
+					}
+					
+					/**
+ 					* Generate JSON for Change Account Request mapped with JSON Schema from the IBM
+ 					* @param: optionSelected: IDIR user name (string)
+ 					* @param: reqFor: IDIR user name (string)
+ 					* @param: scItem: service catalog Item variables object
+ 					* @return: json string
+ 					*/
+					function getChangeAccountData(optionSelected, reqFor, scItem) {
+						
+						var TIME_PORTION_APPENDED = 'T17:00:00-00:00';
+						var OPTION = optionSelected+'';
+						var json = '';
+						
+						switch (OPTION) {
+							case 'u_change_account_expiry_date':
+							json = '{'
+								+ '"userExpiryDateChange": {'
+									+        '"IDIR": "' +  reqFor + '",'
+									+        '"expiryDate": "' + scItem.u_account_expiry_date + TIME_PORTION_APPENDED + '"'
+									+	'}'
+									+'}';
+									break;
+									case 'u_remove_account_expiry_date':
+									json = '{'
+										+ '"userExpiryDateChange": {'
+											+        '"IDIR": "' +  reqFor + '",'
+											+        '"expiryDate": "1601-01-01T00:00:00-00:00"'
+											+	'}'
+											+'}';
+											break;
+											case 'u_place_hold':
+											json = '{'
+												+ '"removeUserAccountHold": {'
+													+        '"IDIR": "' +  reqFor + '",'
+													+        '"effectiveDate": "' + scItem.u_effective_date + TIME_PORTION_APPENDED + '"'
+													+	'}'
+													+'}';
+													break;
+													case 'u_remove_hold':
+													json = '{'
+														+ '"userAccountHold": {'
+															+        '"IDIR": "' +  reqFor + '",'
+															+        '"effectiveDate": "' + scItem.u_effective_date + TIME_PORTION_APPENDED + '"'
+															+	'}'
+															+'}';
+															break;
+															default:
+															gs.info('&gt;&gt;&gt;DEBUG:: OCIO SC TASK Add Attachment: Change Account: The selected IWantTo Option = (' + optionSelected + ')');
+															break;
+														}
+														
+														return json;
+													}
+												})(current, previous);]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script&lt;/sys_class_name&gt;&lt;sys_created_by&gt;James.Jose&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2018-07-07 04:24:01&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;34064093db4713003d1dd001cf961985&lt;/sys_id&gt;&lt;sys_mod_count&gt;1&lt;/sys_mod_count&gt;&lt;sys_name&gt;OCIO SR Add Attachment&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_34064093db4713003d1dd001cf961985&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;James.Jose&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2018-07-30 18:36:31&lt;/sys_updated_on&gt;&lt;template/&gt;&lt;when&gt;before&lt;/when&gt;&lt;/sys_script&gt;&lt;sys_translated_text action="delete_multiple" query="documentkey=34064093db4713003d1dd001cf961985"/&gt;&lt;/record_update&gt;</payload>
+<payload_hash>-817404617</payload_hash>
+<remote_update_set display_value="OCIO SR Add Attachment-Business Rules">bb06793adb231300f72fe04a4896198e</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>James.Jose</sys_created_by>
+<sys_created_on>2018-07-30 19:43:51</sys_created_on>
+<sys_id>ff06793adb231300f72fe04a4896198e</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>164ec7a3d910000001</sys_recorded_at>
+<sys_updated_by>James.Jose</sys_updated_by>
+<sys_updated_on>2018-07-30 19:43:51</sys_updated_on>
+<table>sc_task</table>
+<target_name>OCIO SR Add Attachment</target_name>
+<type>Business Rule</type>
+<update_domain>global</update_domain>
+<update_guid>dda6e5764e231300995f253ef9bc5ac3</update_guid>
+<update_guid_history>dda6e5764e231300995f253ef9bc5ac3:-817404617,5df64c530847130059d4f20f994ae1b6:362747792</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+</unload>
