@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<unload unload_date="2018-07-17 22:42:47">
+<sys_remote_update_set action="INSERT_OR_UPDATE">
+<application display_value="Global">global</application>
+<application_name>Global</application_name>
+<application_scope>global</application_scope>
+<application_version/>
+<collisions/>
+<commit_date/>
+<deleted/>
+<description>OCIO SR SC Scroll to top Widget - SB-275 - Migrated out of the box widget from Kingston instance because that widget was missing in SR DEV Temp instance</description>
+<inserted/>
+<name>OCIO SR SC Scroll to top Widget</name>
+<origin_sys_id/>
+<parent display_value=""/>
+<release_date/>
+<remote_base_update_set display_value=""/>
+<remote_parent_id/>
+<remote_sys_id>33da1b22dbdb930050479eb6db9619bf</remote_sys_id>
+<state>loaded</state>
+<summary/>
+<sys_class_name>sys_remote_update_set</sys_class_name>
+<sys_created_by>JAJOSE</sys_created_by>
+<sys_created_on>2018-07-17 22:42:46</sys_created_on>
+<sys_id>3d52a366dbdb930050479eb6db9619c5</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>JAJOSE</sys_updated_by>
+<sys_updated_on>2018-07-17 22:42:46</sys_updated_on>
+<update_set display_value=""/>
+<update_source display_value=""/>
+<updated/>
+</sys_remote_update_set>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sp_rel_widget_clone_e868d7a2dbd313003d1dd001cf961972</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_rel_widget_clone"><sp_rel_widget_clone action="INSERT_OR_UPDATE"><child display_value="Copy of SC Scroll to top">2468d7a2dbd313003d1dd001cf961970</child><cloned>2018-07-17 21:59:15</cloned><last_validated>2018-07-17 21:59:15</last_validated><parent display_value="SC Scroll to top">9cfd91940b4103002600425663673a31</parent><payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;sp_widget&gt;&lt;category/&gt;&lt;client_script&gt;&lt;![CDATA[function($scope, spUtil, $element) {
+	var c = this;
+	$element.hide();
+	var height = c.options.height_from_top || 300;
+	height = parseInt(height);
+	var lastScrollTop = 0;
+	var container = angular.element('.sp-scroll');
+
+	container.on("scroll", function() {
+		var currentScroll = angular.element(container).scrollTop();
+		if(lastScrollTop &gt; currentScroll &amp;&amp; lastScrollTop &gt; height &amp;&amp; currentScroll &gt; height) // moving up
+			$element.show();
+		else
+			$element.hide();
+		lastScrollTop = currentScroll;
+	});
+
+
+	$scope.goTop = function() {
+		spUtil.scrollTo('.sp-scroll', 300);
+	}
+
+}]]&gt;&lt;/client_script&gt;&lt;controller_as&gt;c&lt;/controller_as&gt;&lt;css&gt;@media only screen and (max-width : 992px) {
+.button-to-top {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px !important;
+    opacity: 0.7 !important;
+    padding: 12px !important;
+    border: 1px solid !important;
+    width: 47px;
+    height: 45px;
+    background-color: #ddd;
+  }
+}&lt;/css&gt;&lt;data_table&gt;sp_instance&lt;/data_table&gt;&lt;demo_data/&gt;&lt;description/&gt;&lt;docs/&gt;&lt;field_list/&gt;&lt;has_preview&gt;false&lt;/has_preview&gt;&lt;id&gt;sc_scroll_to_top&lt;/id&gt;&lt;internal&gt;false&lt;/internal&gt;&lt;link/&gt;&lt;name&gt;SC Scroll to top&lt;/name&gt;&lt;option_schema&gt;[{"hint":"Height from top (px) after which control would display","name":"height_from_top","section":"other","default_value":"300","label":"Height from top (px)","type":"integer"}]&lt;/option_schema&gt;&lt;public&gt;false&lt;/public&gt;&lt;roles/&gt;&lt;script&gt;&lt;![CDATA[(function() {
+
+})();]]&gt;&lt;/script&gt;&lt;servicenow&gt;true&lt;/servicenow&gt;&lt;sys_class_name&gt;sp_widget&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2017-09-02 20:45:33&lt;/sys_created_on&gt;&lt;sys_id&gt;9cfd91940b4103002600425663673a31&lt;/sys_id&gt;&lt;sys_mod_count&gt;1&lt;/sys_mod_count&gt;&lt;sys_name&gt;SC Scroll to top&lt;/sys_name&gt;&lt;sys_package display_value=""&gt;37c5cea187233200e0ef0cf888cb0bb8&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name&gt;sp_widget_9cfd91940b4103002600425663673a31&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2017-09-04 09:41:14&lt;/sys_updated_on&gt;&lt;template&gt;&lt;![CDATA[&lt;div&gt;
+	&lt;button name="gotoTop" ng-click="goTop()" class="visible-xs visible-sm btn fa fa-arrow-up fa-lg padder-lg button-to-top pull-right"&gt;&lt;/button&gt;
+&lt;/div&gt;]]&gt;&lt;/template&gt;&lt;/sp_widget&gt;</payload><sys_class_name>sp_rel_widget_clone</sys_class_name><sys_created_by>James.Jose</sys_created_by><sys_created_on>2018-07-17 21:59:15</sys_created_on><sys_id>e868d7a2dbd313003d1dd001cf961972</sys_id><sys_mod_count>0</sys_mod_count><sys_name>2468d7a2dbd313003d1dd001cf961970</sys_name><sys_package display_value="Global" source="global">global</sys_package><sys_policy/><sys_scope display_value="Global">global</sys_scope><sys_update_name>sp_rel_widget_clone_e868d7a2dbd313003d1dd001cf961972</sys_update_name><sys_updated_by>James.Jose</sys_updated_by><sys_updated_on>2018-07-17 21:59:15</sys_updated_on></sp_rel_widget_clone></record_update>]]></payload>
+<payload_hash>-1673832723</payload_hash>
+<remote_update_set display_value="OCIO SR SC Scroll to top Widget">3d52a366dbdb930050479eb6db9619c5</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>JAJOSE</sys_created_by>
+<sys_created_on>2018-07-17 22:42:46</sys_created_on>
+<sys_id>b152a366dbdb930050479eb6db9619c6</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>164aa4b25e80000000</sys_recorded_at>
+<sys_updated_by>JAJOSE</sys_updated_by>
+<sys_updated_on>2018-07-17 22:42:46</sys_updated_on>
+<table/>
+<target_name>2468d7a2dbd313003d1dd001cf961970</target_name>
+<type>Widget Clone</type>
+<update_domain>global</update_domain>
+<update_guid>2868d7a21cd313005a02168cc2ad8d73</update_guid>
+<update_guid_history>2868d7a21cd313005a02168cc2ad8d73:-1673832723</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sp_widget_2468d7a2dbd313003d1dd001cf961970</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sp_widget"&gt;&lt;sp_widget action="INSERT_OR_UPDATE"&gt;&lt;category&gt;custom&lt;/category&gt;&lt;client_script&gt;&lt;![CDATA[function($scope, spUtil, $element) {
+	var c = this;
+	$element.hide();
+	var height = c.options.height_from_top || 300;
+	height = parseInt(height);
+	var lastScrollTop = 0;
+	var container = angular.element('.sp-scroll');
+
+	container.on("scroll", function() {
+		var currentScroll = angular.element(container).scrollTop();
+		if(lastScrollTop &gt; currentScroll &amp;&amp; lastScrollTop &gt; height &amp;&amp; currentScroll &gt; height) // moving up
+			$element.show();
+		else
+			$element.hide();
+		lastScrollTop = currentScroll;
+	});
+
+
+	$scope.goTop = function() {
+		spUtil.scrollTo('.sp-scroll', 300);
+	}
+
+}]]&gt;&lt;/client_script&gt;&lt;controller_as&gt;c&lt;/controller_as&gt;&lt;css&gt;@media only screen and (max-width : 992px) {&amp;#13;
+.button-to-top {&amp;#13;
+    position: fixed;&amp;#13;
+    bottom: 0;&amp;#13;
+    right: 0;&amp;#13;
+    margin-right: 15px;&amp;#13;
+    margin-bottom: 15px;&amp;#13;
+    border-radius: 5px !important;&amp;#13;
+    opacity: 0.7 !important;&amp;#13;
+    padding: 12px !important;&amp;#13;
+    border: 1px solid !important;&amp;#13;
+    width: 47px;&amp;#13;
+    height: 45px;&amp;#13;
+    background-color: #ddd;&amp;#13;
+  }&amp;#13;
+}&lt;/css&gt;&lt;data_table&gt;sp_instance&lt;/data_table&gt;&lt;demo_data/&gt;&lt;description/&gt;&lt;docs/&gt;&lt;field_list/&gt;&lt;has_preview&gt;false&lt;/has_preview&gt;&lt;id&gt;sc_scroll_to_top_copy&lt;/id&gt;&lt;internal&gt;false&lt;/internal&gt;&lt;link/&gt;&lt;name&gt;SC Scroll to top&lt;/name&gt;&lt;option_schema&gt;[{"hint":"Height from top (px) after which control would display","name":"height_from_top","section":"other","default_value":"300","label":"Height from top (px)","type":"integer"}]&lt;/option_schema&gt;&lt;public&gt;false&lt;/public&gt;&lt;roles/&gt;&lt;script&gt;&lt;![CDATA[(function() {
+
+})();]]&gt;&lt;/script&gt;&lt;servicenow&gt;false&lt;/servicenow&gt;&lt;sys_class_name&gt;sp_widget&lt;/sys_class_name&gt;&lt;sys_created_by&gt;James.Jose&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2018-07-17 21:59:15&lt;/sys_created_on&gt;&lt;sys_id&gt;2468d7a2dbd313003d1dd001cf961970&lt;/sys_id&gt;&lt;sys_mod_count&gt;2&lt;/sys_mod_count&gt;&lt;sys_name&gt;SC Scroll to top&lt;/sys_name&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name&gt;sp_widget_2468d7a2dbd313003d1dd001cf961970&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;James.Jose&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2018-07-17 22:01:12&lt;/sys_updated_on&gt;&lt;template&gt;&lt;![CDATA[&lt;div&gt;
+	&lt;button name="gotoTop" ng-click="goTop()" class="visible-xs visible-sm btn fa fa-arrow-up fa-lg padder-lg button-to-top pull-right"&gt;&lt;/button&gt;
+&lt;/div&gt;]]&gt;&lt;/template&gt;&lt;/sp_widget&gt;&lt;/record_update&gt;</payload>
+<payload_hash>503117793</payload_hash>
+<remote_update_set display_value="OCIO SR SC Scroll to top Widget">3d52a366dbdb930050479eb6db9619c5</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>JAJOSE</sys_created_by>
+<sys_created_on>2018-07-17 22:42:46</sys_created_on>
+<sys_id>b952a366dbdb930050479eb6db9619c6</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>164aa4b25e80000000</sys_recorded_at>
+<sys_updated_by>JAJOSE</sys_updated_by>
+<sys_updated_on>2018-07-17 22:42:46</sys_updated_on>
+<table/>
+<target_name>SC Scroll to top</target_name>
+<type>Widget</type>
+<update_domain>global</update_domain>
+<update_guid>0dd8dfa230d3130002d9f39b03700bc8</update_guid>
+<update_guid_history>0dd8dfa230d3130002d9f39b03700bc8:503117793,da78d3aa13931300ccf12ddbe9602304:-1347165471,6868d7a215d31300d9f7190f303d1b71:-2044673244</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+</unload>
