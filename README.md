@@ -45,34 +45,32 @@ Sequence	Update Set Name
 
 21	OCIO SR Salutation Widget
 
-22	OCIO SR Header Widget
+22	OCIO SR Data Table from Instance Definition Widget
 
-23	OCIO SR Data Table from Instance Definition Widget
+23	OCIO SR Header Menu
 
-24	OCIO SR Header Menu
+24	OCIO SR Header Menu - v01
 
-25	OCIO SR Header Menu - v01
+25	OCIO SR Theme
 
-26	OCIO SR Theme
+26	OCIO SR Home Page
 
-27	OCIO SR Home Page
+27	OCIO SR Home Page - v01
 
-28	OCIO SR Home Page - v01
+28	OCIO SR Home Page - v02
 
-29	OCIO SR Home Page - v02
+29	OCIO SR Dashboard Page
 
-30	OCIO SR Dashboard Page
+30	OCIO SR SC Scroll to top Widget
 
-31	OCIO SR SC Scroll to top Widget
+31	OCIO SR Service Catalog Item Page
 
-32	OCIO SR Service Catalog Item Page
+32	OCIO SR Products and Service Catalogue Page
 
-33	OCIO SR Products and Service Catalogue Page
+33	OCIO SR My Orders Page
 
-34	OCIO SR My Orders Page
+34	OCIO SR Mysc Portal
 
-35	OCIO SR Mysc Portal
+35	OCIO SR Mysc Portal - v01
 
-36	OCIO SR Mysc Portal - v01
-
-37	OCIO SR Logout Redirect
+36	OCIO SR Logout Redirect
