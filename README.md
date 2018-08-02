@@ -3,7 +3,7 @@ Code repository of SMTP Service Request project for ServiceNow
 
 Sequence	Update Set Name
 -------
-1	OCIO SR Add RequestedFor in RTIM
+1	OCIO SR Add Custom Fields in RTIM
 
 2	OCIO SR System Security Groups
 
