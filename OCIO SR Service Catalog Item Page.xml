@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<unload unload_date="2018-07-25 02:03:23">
+<sys_remote_update_set action="INSERT_OR_UPDATE">
+<application display_value="Global">global</application>
+<application_name>Global</application_name>
+<application_scope>global</application_scope>
+<application_version/>
+<collisions/>
+<commit_date/>
+<deleted/>
+<description>SB-275 - Modified out of the box page in SR DEV Temp instance to match with Kingston instance because the SR DEV instance was using old widget</description>
+<inserted/>
+<name>OCIO SR Service Catalog Item Page</name>
+<origin_sys_id/>
+<parent display_value=""/>
+<release_date/>
+<remote_base_update_set display_value=""/>
+<remote_parent_id/>
+<remote_sys_id>c390a726dbdb930050479eb6db96196f</remote_sys_id>
+<state>loaded</state>
+<summary/>
+<sys_class_name>sys_remote_update_set</sys_class_name>
+<sys_created_by>JAJOSE</sys_created_by>
+<sys_created_on>2018-07-25 02:03:23</sys_created_on>
+<sys_id>2c639841db6fd700fe199236db9619c1</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>JAJOSE</sys_updated_by>
+<sys_updated_on>2018-07-25 02:03:23</sys_updated_on>
+<update_set display_value=""/>
+<update_source display_value=""/>
+<updated/>
+</sys_remote_update_set>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sp_instance_c761ef26dbdb930050479eb6db961942</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sp_instance"&gt;&lt;sp_instance action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;class_name/&gt;&lt;color&gt;default&lt;/color&gt;&lt;css/&gt;&lt;glyph/&gt;&lt;id/&gt;&lt;order&gt;1&lt;/order&gt;&lt;roles/&gt;&lt;short_description/&gt;&lt;size&gt;md&lt;/size&gt;&lt;sp_column display_value="1"&gt;fef80b70d7000200a9ad1e173e24d438&lt;/sp_column&gt;&lt;sp_widget display_value="SC Catalog Item"&gt;3c29786e87133200e0ef0cf888cb0bdf&lt;/sp_widget&gt;&lt;sys_class_name&gt;sp_instance&lt;/sys_class_name&gt;&lt;sys_created_by&gt;JAJOSE&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2018-07-17 22:38:45&lt;/sys_created_on&gt;&lt;sys_id&gt;c761ef26dbdb930050479eb6db961942&lt;/sys_id&gt;&lt;sys_mod_count&gt;5&lt;/sys_mod_count&gt;&lt;sys_name/&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name&gt;sp_instance_c761ef26dbdb930050479eb6db961942&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;JAJOSE&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2018-07-25 01:51:39&lt;/sys_updated_on&gt;&lt;title/&gt;&lt;url/&gt;&lt;widget_parameters&gt;&lt;![CDATA[{
+	"show_add_cart_button": {
+		"value": "true",
+		"displayValue": "true"
+	},
+	"show_field_validation_messages": {
+		"value": "true",
+		"displayValue": "true"
+	},
+	"show_add_to_wishlist_button": {
+		"value": "true",
+		"displayValue": "true"
+	},
+	"display_cart_on_right": {
+		"value": "true",
+		"displayValue": "true"
+	},
+	"show_less_description": {
+		"value": "true",
+		"displayValue": "true"
+	}
+}]]&gt;&lt;/widget_parameters&gt;&lt;/sp_instance&gt;&lt;sys_translated_text action="delete_multiple" query="documentkey=c761ef26dbdb930050479eb6db961942"/&gt;&lt;/record_update&gt;</payload>
+<payload_hash>1232240150</payload_hash>
+<remote_update_set display_value="OCIO SR Service Catalog Item Page">2c639841db6fd700fe199236db9619c1</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>JAJOSE</sys_created_by>
+<sys_created_on>2018-07-25 02:03:23</sys_created_on>
+<sys_id>6c639841db6fd700fe199236db9619c2</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>164cf2275070000001</sys_recorded_at>
+<sys_updated_by>JAJOSE</sys_updated_by>
+<sys_updated_on>2018-07-25 02:03:23</sys_updated_on>
+<table/>
+<target_name/>
+<type>Instance</type>
+<update_domain>global</update_domain>
+<update_guid>b8b01c0df72fd700354352d7af13396c</update_guid>
+<update_guid_history>b8b01c0df72fd700354352d7af13396c:1232240150,cc605485c42fd700b8938b2aa30c48f5:-799070748,86305001916fd700f565fa8097a44459:1232240150,b4ba084d362fd700cfa7e1ff6eae530e:-799070748,e7894c41de2fd700415b988bcde474a1:1232240150,cf61ef260edb9300734f7ae31c90e843:1055264235</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>DELETE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sp_instance_16e247e2db9b930050479eb6db9619a2</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance"><sp_instance action="DELETE"><active>true</active><class_name/><color>default</color><css/><glyph/><id/><order>1</order><roles/><short_description/><size>md</size><sp_column display_value="1">fef80b70d7000200a9ad1e173e24d438</sp_column><sp_widget display_value="SC Catalog Item Deprecated">0fd6a6f247230200ba13a5554ee490b3</sp_widget><sys_class_name>sp_instance</sys_class_name><sys_created_by>JAJOSE</sys_created_by><sys_created_on>2018-07-17 20:25:27</sys_created_on><sys_id>16e247e2db9b930050479eb6db9619a2</sys_id><sys_mod_count>0</sys_mod_count><sys_name/><sys_package display_value="Global" source="global">global</sys_package><sys_policy/><sys_scope display_value="Global">global</sys_scope><sys_update_name>sp_instance_16e247e2db9b930050479eb6db9619a2</sys_update_name><sys_updated_by>JAJOSE</sys_updated_by><sys_updated_on>2018-07-17 20:25:27</sys_updated_on><title/><url/><widget_parameters/></sp_instance><sys_translated_text action="delete_multiple" query="documentkey=16e247e2db9b930050479eb6db9619a2"/></record_update>]]></payload>
+<payload_hash>1974761597</payload_hash>
+<remote_update_set display_value="OCIO SR Service Catalog Item Page">2c639841db6fd700fe199236db9619c1</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>JAJOSE</sys_created_by>
+<sys_created_on>2018-07-25 02:03:23</sys_created_on>
+<sys_id>a0639841db6fd700fe199236db9619c2</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>164aa6523900000001</sys_recorded_at>
+<sys_updated_by>JAJOSE</sys_updated_by>
+<sys_updated_on>2018-07-25 02:03:23</sys_updated_on>
+<table/>
+<target_name/>
+<type>Instance</type>
+<update_domain>global</update_domain>
+<update_guid>bb51af26e0db93004c91e5b22f233fea</update_guid>
+<update_guid_history>bb51af26e0db93004c91e5b22f233fea:1974761597,9ae247e29d9b9300ba504d3ebebe93a3:1446372233</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sp_instance_8971a726dbdb930050479eb6db9619ae</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance"><sp_instance action="INSERT_OR_UPDATE"><active>true</active><class_name/><color>default</color><css/><glyph/><id/><order>2</order><roles/><short_description/><size>md</size><sp_column display_value="1">fef80b70d7000200a9ad1e173e24d438</sp_column><sp_widget display_value="SC Scroll to top">2468d7a2dbd313003d1dd001cf961970</sp_widget><sys_class_name>sp_instance</sys_class_name><sys_created_by>JAJOSE</sys_created_by><sys_created_on>2018-07-17 22:38:54</sys_created_on><sys_id>8971a726dbdb930050479eb6db9619ae</sys_id><sys_mod_count>0</sys_mod_count><sys_name/><sys_package display_value="Global" source="global">global</sys_package><sys_policy/><sys_scope display_value="Global">global</sys_scope><sys_update_name>sp_instance_8971a726dbdb930050479eb6db9619ae</sys_update_name><sys_updated_by>JAJOSE</sys_updated_by><sys_updated_on>2018-07-17 22:38:54</sys_updated_on><title/><url/><widget_parameters/></sp_instance><sys_translated_text action="delete_multiple" query="documentkey=8971a726dbdb930050479eb6db9619ae"/></record_update>]]></payload>
+<payload_hash>550127153</payload_hash>
+<remote_update_set display_value="OCIO SR Service Catalog Item Page">2c639841db6fd700fe199236db9619c1</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>JAJOSE</sys_created_by>
+<sys_created_on>2018-07-25 02:03:23</sys_created_on>
+<sys_id>a8639841db6fd700fe199236db9619c2</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>164aa657a0b0000001</sys_recorded_at>
+<sys_updated_by>JAJOSE</sys_updated_by>
+<sys_updated_on>2018-07-25 02:03:23</sys_updated_on>
+<table/>
+<target_name/>
+<type>Instance</type>
+<update_domain>global</update_domain>
+<update_guid>8d71a7269edb9300f4b7fdc0077c94af</update_guid>
+<update_guid_history>8d71a7269edb9300f4b7fdc0077c94af:550127153</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+</unload>
